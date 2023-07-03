@@ -1,82 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Пример подключения плеера</title>
-  <meta charset="utf-8">
-  <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-
-    .player {
-            width: 800px;
-            height: 600px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 10);
-            display: flex;
-            flex-direction: column; 
-        }
-        
-    .button-wrapper {
-        display: inline-block;
-        background-color: black;
-        width: 100%;
-    }
-
-    .js-play-button,
-    .js-pause-button,
-    .js-volume-button,
-    .js-mute-button {
-        border: none;
-        background-color: transparent;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-        font-size: 18px;
-    }
-
-    /* Стили для иконок */
-    .fa {
-        color: white;
-    }
-
-    /* Стили для js-video-container - чтобы он занимал оставшееся пространство */
-    .js-video-container {
+  <head>
+    <title>Пример подключения плеера</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      .player {
+      width: 800px;
+      height: 600px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+      display: flex;
+      flex-direction: column; 
+      }
+      .button-wrapper {
+      display: inline-block;
+      background-color: black;
+      width: 100%;
+      }
+      .js-play-button,
+      .js-pause-button,
+      .js-volume-button,
+      .js-mute-button {
+      border: none;
+      background-color: transparent;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 18px;
+      }
+      /* Стили для иконок */
+      .fa {
+      color: white;
+      }
+      /* Стили для js-video-container - чтобы он занимал оставшееся пространство */
+      .js-video-container {
       flex-grow: 1;
-    }
-  </style>
-
-</head>
-<body>
-  <div class="player" id="player" style="width: 800px; height: 600px;">
-    <div class="js-video-container" style="width: 100%; height: 100%"></div>
-    <!-- Here can be placed player controls: play and volume buttons -->
-
-    <div class="button-wrapper">
-
+      }
+    </style>
+  </head>
+  <body>
+    <div class="player" id="player" style="width: 800px; height: 600px;">
+      <div class="js-video-container" style="width: 100%; height: 100%"></div>
+      <!-- Here can be placed player controls: play and volume buttons -->
+      <div class="button-wrapper">
         <button class="js-play-button">
-            <i class="fa fa-play"></i>
+        <i class="fa fa-play"></i>
         </button>
         <button class="js-pause-button">
-            <i class="fa fa-pause"></i>
+        <i class="fa fa-pause"></i>
         </button>
-
         <button class="js-volume-button">
-            <i class="fa fa-volume-up"></i>
+        <i class="fa fa-volume-up"></i>
         </button>
         <button class="js-mute-button">
-            <i class="fa fa-volume-off"></i>
+        <i class="fa fa-volume-off"></i>
         </button>
+      </div>
     </div>
-
-
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
-
-  <script type="text/javascript">
-    createPlayer({elementId: 'player'});
-  </script>
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+    <script src="player.js"></script>
+    <script type="text/javascript">
+      createPlayer({elementId: 'player'});
+    </script>
+  </body>
 </html>

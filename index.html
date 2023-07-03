@@ -7,36 +7,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
       .player {
-      width: 800px;
-      height: 600px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 10);
-      display: flex;
-      flex-direction: column; 
+        width: 800px;
+        height: 600px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+        display: flex;
+        flex-direction: column;
       }
+
       .button-wrapper {
-      display: inline-block;
-      background-color: black;
-      width: 100%;
+        display: inline-block;
+        background-color: black;
+        width: 100%;
       }
+
       .js-play-button,
       .js-pause-button,
       .js-volume-button,
-      .js-mute-button {
-      border: none;
-      background-color: transparent;
-      height: 40px;
-      width: 40px;
-      cursor: pointer;
-      margin: 5px;
-      font-size: 18px;
+      .js-mute-button,
+      .js-fullscreen-button {
+        border: none;
+        background-color: transparent;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        margin: 5px;
+        font-size: 18px;
       }
+
       /* Стили для иконок */
       .fa {
-      color: white;
+        color: white;
       }
+
       /* Стили для js-video-container - чтобы он занимал оставшееся пространство */
       .js-video-container {
-      flex-grow: 1;
+        flex-grow: 1;
       }
     </style>
   </head>
@@ -46,16 +51,19 @@
       <!-- Here can be placed player controls: play and volume buttons -->
       <div class="button-wrapper">
         <button class="js-play-button">
-        <i class="fa fa-play"></i>
+          <i class="fa fa-play"></i>
         </button>
         <button class="js-pause-button">
-        <i class="fa fa-pause"></i>
+          <i class="fa fa-pause"></i>
         </button>
         <button class="js-volume-button">
-        <i class="fa fa-volume-up"></i>
+          <i class="fa fa-volume-up"></i>
         </button>
         <button class="js-mute-button">
-        <i class="fa fa-volume-off"></i>
+          <i class="fa fa-volume-off"></i>
+        </button>
+        <button class="js-fullscreen-button">
+          <i class="fa fa-expand"></i>
         </button>
       </div>
     </div>
@@ -63,7 +71,9 @@
     <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
     <script src="player.js"></script>
     <script type="text/javascript">
-      createPlayer({elementId: 'player'});
+      createPlayer({
+        elementId: 'player'
+      });
     </script>
   </body>
 </html>

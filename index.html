@@ -8,21 +8,24 @@
 
   <style>
 
-    /* Стили для player */
     .player {
             width: 800px;
             height: 600px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+            display: flex;
+            flex-direction: column; 
         }
-    /* Стили для обертки div */
+        
     .button-wrapper {
         display: inline-block;
         background-color: black;
         width: 100%;
     }
 
-    /* Стили для кнопок */
-    .js-play-button, .js-pause-button {
+    .js-play-button,
+    .js-pause-button,
+    .js-volume-button,
+    .js-mute-button {
         border: none;
         background-color: transparent;
         height: 40px;
@@ -34,6 +37,11 @@
     .fa {
         color: white;
     }
+
+    /* Стили для js-video-container - чтобы он занимал оставшееся пространство */
+    .js-video-container {
+      flex-grow: 1;
+    }
   </style>
 
 </head>
@@ -43,11 +51,19 @@
     <!-- Here can be placed player controls: play and volume buttons -->
 
     <div class="button-wrapper">
+
         <button class="js-play-button">
             <i class="fa fa-play"></i>
         </button>
         <button class="js-pause-button">
             <i class="fa fa-pause"></i>
+        </button>
+
+        <button class="js-volume-button">
+            <i class="fa fa-volume-up"></i>
+        </button>
+        <button class="js-mute-button">
+            <i class="fa fa-volume-off"></i>
         </button>
     </div>
 

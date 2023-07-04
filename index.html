@@ -15,54 +15,53 @@
       }
 
       .button-wrapper {
-        display: inline-block;
+        display: flex;
         background-color: black;
         width: 100%;
+        align-items: flex-end;
       }
 
-      .js-play-button,
-      .js-pause-button,
-      .js-volume-button,
-      .js-mute-button,
-      .js-fullscreen-button {
+      .vp-button {
         border: none;
         background-color: transparent;
         height: 40px;
         width: 40px;
         cursor: pointer;
         margin: 5px;
-        font-size: 18px;
-      }
-
-      /* Стили для иконок */
-      .fa {
+        font-size: 20px;
         color: white;
       }
 
-      /* Стили для js-video-container - чтобы он занимал оставшееся пространство */
-      .js-video-container {
+      /* Стили для vp-container - чтобы он занимал оставшееся пространство */
+      .vp-container {
         flex-grow: 1;
       }
+
+      .empty-div {
+        flex-grow: 1;
+      }
+
     </style>
   </head>
   <body>
-    <div class="player" id="player" style="width: 800px; height: 600px;">
-      <div class="js-video-container" style="width: 100%; height: 100%"></div>
+    <div class="player" id="player">
+      <div class="js-video-container vp-container"></div>
       <!-- Here can be placed player controls: play and volume buttons -->
       <div class="button-wrapper">
-        <button class="js-play-button">
+        <button class="js-play-button vp-button">
           <i class="fa fa-play"></i>
         </button>
-        <button class="js-pause-button">
+        <button class="js-pause-button vp-button">
           <i class="fa fa-pause"></i>
         </button>
-        <button class="js-volume-button">
+        <button class="js-mute-button vp-button">
           <i class="fa fa-volume-up"></i>
         </button>
-        <button class="js-mute-button">
+        <button class="js-volume-button vp-button">
           <i class="fa fa-volume-off"></i>
         </button>
-        <button class="js-fullscreen-button">
+        <div>class="empty-div"</div>
+        <button class="js-fullscreen-button vp-button">
           <i class="fa fa-expand"></i>
         </button>
       </div>

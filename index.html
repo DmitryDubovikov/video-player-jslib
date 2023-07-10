@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
       .player {
         width: 800px;
@@ -37,6 +40,11 @@
         flex-grow: 1;
       }
 
+      .time {
+        flex-grow: 1;
+        font-family: 'Roboto', sans-serif;
+      }
+
       .empty-div {
         flex-grow: 1;
       }
@@ -60,7 +68,15 @@
         <button class="js-volume-button vp-button">
           <i class="fa fa-volume-off"></i>
         </button>
-        <div class="empty-div"></div>
+        
+
+
+        <div class="time" style="color: white;">
+          <span class="js-current-time"></span>
+          <!-- <div class="empty-div"></div> -->
+          <span class="js-duration"></span>
+        </div>
+
         <button class="js-fullscreen-button vp-button">
           <i class="fa fa-expand"></i>
         </button>

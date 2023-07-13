@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <style>
       .player {
         width: 800px;
@@ -17,14 +18,14 @@
         flex-direction: column;
       }
 
-      .button-wrapper {
+      .player .bottom-controls {
         display: flex;
         background-color: black;
         width: 100%;
         align-items: center;
       }
 
-      .vp-button {
+      .player-button {
         border: none;
         background-color: transparent;
         height: 28px;
@@ -35,53 +36,81 @@
         color: white;
       }
 
-      /* Стили для vp-container - чтобы он занимал оставшееся пространство */
-      .vp-container {
+      .screen {
         flex-grow: 1;
       }
 
       .time {
         flex-grow: 1;
         font-family: 'Roboto', sans-serif;
+        color: white;
       }
 
-      .empty-div {
+      .left-buttons,
+      .right-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .viewing-panel {
         flex-grow: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .viewing-progressbar {
+        flex-grow: 1;
+        height: 8px;
+        background-color: #ccc;
       }
 
     </style>
   </head>
   <body>
+
     <div class="player" id="player">
-      <div class="js-video-container vp-container"></div>
-      <!-- Here can be placed player controls: play and volume buttons -->
-      <div class="button-wrapper">
-        <button class="js-play-button vp-button">
-          <i class="fa fa-play"></i>
-        </button>
-        <button class="js-pause-button vp-button">
-          <i class="fa fa-pause"></i>
-        </button>
-        <button class="js-mute-button vp-button">
-          <i class="fa fa-volume-up"></i>
-        </button>
-        <button class="js-volume-button vp-button">
-          <i class="fa fa-volume-off"></i>
-        </button>
-        
-
-
-        <div class="time" style="color: white;">
-          <span class="js-current-time"></span>
-          <!-- <div class="empty-div"></div> -->
-          <span class="js-duration"></span>
+      <div class="js-video-container screen"></div>
+      <div class="bottom-controls">
+        <div class="left-buttons">
+          <div class="player-button">
+            <button class="js-play-button">
+              <i class="fa fa-play"></i>
+              <button class="js-pause-button">
+                <i class="fa fa-pause"></i>
+              </button>
+            </button>
+          </div>
+          <div class="player-button">
+            <button class="js-mute-button">
+              <i class="fa fa-volume-up"></i>
+            </button>
+            <button class="js-volume-button">
+              <i class="fa fa-volume-off"></i>
+          </div>
         </div>
-
-        <button class="js-fullscreen-button vp-button">
-          <i class="fa fa-expand"></i>
-        </button>
+        <div class="viewing-panel time">
+          <div class="viewing-time time">
+            <span class="js-current-time"></span>            
+          </div>
+          <div class="viewing-progressbar"></div>
+          <div class="video-duration">
+            <span class="js-duration"></span>
+          </div>
+        </div>
+        <div class="right-buttons">
+          <div class="player-button fullscreen">
+            <button class="js-fullscreen-button">
+              <i class="fa fa-expand"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
     <script src="player.js"></script>

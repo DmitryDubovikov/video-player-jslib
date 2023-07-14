@@ -41,7 +41,6 @@
       }
 
       .time {
-        flex-grow: 1;
         font-family: 'Roboto', sans-serif;
         color: white;
       }
@@ -60,8 +59,9 @@
 
       .viewing-progressbar {
         flex-grow: 1;
-        height: 8px;
+        height: 5px;
         background-color: #ccc;
+        border-radius: 5% / 12%;
       }
 
     </style>
@@ -93,7 +93,7 @@
             <span class="js-current-time"></span>            
           </div>
           <div class="js-progress viewing-progressbar">
-            <div class="js-progress-slider" style="background-color: red;">Прогресс</div>
+            <div class="js-progress-slider viewing-progressbar" style="background-color: red;">  </div>
           </div>
           <div class="video-duration">
             <span class="js-duration"></span>

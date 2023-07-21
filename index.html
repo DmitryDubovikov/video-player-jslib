@@ -8,84 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="/player.css" rel="stylesheet">
 
-    <style type="text/css">
-      .vp-main {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 800px;
-        height: 600px;
-        box-shadow: 0 0 10px rgb(0,0,0);
-      }
-      .vp-main .vp-buttons {
-        background: black;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-       }
-      .vp-buttons .vp-button  {
-        width: 30px;
-        height: 30px;
-        margin: 2px 0px;
-        cursor: pointer;
-        background-color: transparent;
-        color: white;
-        font-size: medium;
-        border-width: 0px;
-      }
-      .vp-buttons .vp-numbers {
-        font-size: small;
-        padding: 0px 0px;
-        font-family: 'Roboto';
-        color: white;
-        margin: auto;
-      }
-      .vp-progress {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-      }
-      .vp-progress, .vp-slider {
-        margin-left: 7px;
-        margin-top: auto;
-        margin-bottom: auto;
-        height: 4px;
-        width: 105px;
-        box-sizing: border-box;
-        border-radius: 2px;
-      }
-      .vp-slider {
-        margin-left: 0px;
-        margin-right: -4px
-      }
-      .vp-screen, .vp-empty {
-        flex-grow: 1;
-      }
-      .circle {
-        margin-top: -4px;
-        margin-right: -4px;
-        height: 6.5px;
-        width: 6.5px;
-        border-radius: 50%;
-        background-color: red;
-        border: solid;
-        border-color: white;
-        opacity: 0%;
-        transition-property: opacity;
-        transition-duration: 300ms;
-        transition-timing-function: ease-in-out;
-      }
-      .vp-buttons:hover .circle {
-        opacity: 100%;
-      }
-    </style>
   </head>
   <body>
 
     <div id="player" class="vp-main">
           <div class="js-video-container vp-screen"></div>
-          <div class="vp-buttons" style="">
+          <div class="vp-buttons">
             <button class="vp-button js-play-button" hidden>
               <i class="fa fa-play" aria-hidden="true"></i>
             </button>
@@ -98,13 +28,14 @@
             <button class="vp-button js-volume-button" hidden>
               <i class="fa fa-volume-off" aria-hidden="true"></i>
             </button>
-            <div class="vp-numbers js-current-time"></div>
-            <div class="vp-progress  js-progress" style="background-color: grey;">
-              <div class="vp-slider js-progress-slider" style="background-color: red;"></div>
-              <div class="circle"></div>
+            <div class="vp-progress-block">
+              <div class="vp-count-start js-current-time"></div>
+              <div class="vp-progress-bar js-progress" style="background-color: grey;">
+                <div class="vp-slider js-progress-slider" style="background-color: red;"></div>
+                <div class="circle"></div>
+              </div>
             </div>
-            <div class="vp-empty"></div>
-            <div class="vp-numbers js-duration"></div>
+            <div class="vp-count-end js-duration"></div>
             <button class="vp-button js-fullscreen-button">
               <i class="fa fa-expand" aria-hidden="true"></i>
             </button>

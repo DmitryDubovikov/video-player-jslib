@@ -1,0 +1,71 @@
+.vp-main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 800px;
+    height: 600px;
+    box-shadow: 0 0 10px rgb(0,0,0);
+}
+.vp-main .vp-buttons {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.vp-buttons .vp-button  {
+    width: 40px;
+    height: 40px;
+    margin: 2px -2px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-width: 0px;
+}
+.vp-buttons .vp-count-start {
+    font-family: 'Roboto';
+    color: white;
+}
+.vp-buttons .vp-count-end {
+    font-family: 'Roboto';
+    color: white;
+    self-align: flex-end;
+}
+.vp-progress-block {
+    margin-left: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+.vp-progress-bar {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+}
+.vp-progress-bar, .vp-slider {
+    height: 4px;
+    width: 135px;
+    border-radius: 2px;
+}
+.vp-screen {
+    flex-grow: 1;
+}
+.circle {
+    margin-left: -6px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: red;
+    border: solid;
+    border-color: white;
+    opacity: 0%;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+.vp-buttons:hover .circle {
+    opacity: 100%;
+}

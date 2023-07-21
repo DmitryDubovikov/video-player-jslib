@@ -9,108 +9,107 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <style>
-      .player {
-        width: 800px;
-        height: 600px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+    <style type="text/css">
+      .vp-main {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        width: 800px;
+        height: 600px;
+        box-shadow: 0 0 10px rgb(0,0,0);
       }
-
-      .player .bottom-controls {
+      .vp-main .vp-buttons {
+        background: black;
         display: flex;
-        background-color: black;
-        width: 100%;
-        align-items: center;
-      }
-
-      .player-button {
-        border: none;
-        background-color: transparent;
-        height: 28px;
-        width: 28px;
+        flex-direction: row;
+        align-items: stretch;
+       }
+      .vp-buttons .vp-button  {
+        width: 30px;
+        height: 30px;
+        margin: 2px 0px;
         cursor: pointer;
-        margin: 2px 6px 9px 0px;  
-        font-size: 20px;
+        background-color: transparent;
         color: white;
+        font-size: medium;
+        border-width: 0px;
       }
-
-      .screen {
-        flex-grow: 1;
-      }
-
-      .time {
-        font-family: 'Roboto', sans-serif;
+      .vp-buttons .vp-numbers {
+        font-size: small;
+        padding: 0px 0px;
+        font-family: 'Roboto';
         color: white;
+        margin: auto;
       }
-
-      .left-buttons,
-      .right-buttons {
+      .vp-progress {
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
       }
-
-      .viewing-panel {
+      .vp-progress, .vp-slider {
+        margin-left: 7px;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 4px;
+        width: 105px;
+        box-sizing: border-box;
+        border-radius: 2px;
+      }
+      .vp-slider {
+        margin-left: 0px;
+        margin-right: -4px
+      }
+      .vp-screen, .vp-empty {
         flex-grow: 1;
-        display: flex;
-        align-items: center;
       }
-
-      .viewing-progressbar {
-        flex-grow: 1;
-        height: 5px;
-        background-color: #ccc;
-        border-radius: 5% / 12%;
+      .circle {
+        margin-top: -4px;
+        margin-right: -4px;
+        height: 6.5px;
+        width: 6.5px;
+        border-radius: 50%;
+        background-color: red;
+        border: solid;
+        border-color: white;
+        opacity: 0%;
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
       }
-
+      .vp-buttons:hover .circle {
+        opacity: 100%;
+      }
     </style>
   </head>
   <body>
 
-    <div class="player" id="player">
-      <div class="js-video-container screen"></div>
-      <div class="bottom-controls">
-        <div class="left-buttons">
-          <div class="player-button">
-            <button class="js-play-button">
-              <i class="fa fa-play"></i>
-              <button class="js-pause-button">
-                <i class="fa fa-pause"></i>
-              </button>
+    <div id="player" class="vp-main">
+          <div class="js-video-container vp-screen"></div>
+          <div class="vp-buttons" style="">
+            <button class="vp-button js-play-button" hidden>
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button class="vp-button js-pause-button" hidden>
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <button class="vp-button js-mute-button" hidden>
+              <i class="fa fa-volume-up" aria-hidden="true"></i>
+            </button>
+            <button class="vp-button js-volume-button" hidden>
+              <i class="fa fa-volume-off" aria-hidden="true"></i>
+            </button>
+            <div class="vp-numbers js-current-time"></div>
+            <div class="vp-progress  js-progress" style="background-color: grey;">
+              <div class="vp-slider js-progress-slider" style="background-color: red;"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="vp-empty"></div>
+            <div class="vp-numbers js-duration"></div>
+            <button class="vp-button js-fullscreen-button">
+              <i class="fa fa-expand" aria-hidden="true"></i>
             </button>
           </div>
-          <div class="player-button">
-            <button class="js-mute-button">
-              <i class="fa fa-volume-up"></i>
-            </button>
-            <button class="js-volume-button">
-              <i class="fa fa-volume-off"></i>
-          </div>
-        </div>
-        <div class="viewing-panel time">
-          <div class="viewing-time time">
-            <span class="js-current-time"></span>            
-          </div>
-          <div class="js-progress viewing-progressbar">
-            <div class="js-progress-slider viewing-progressbar" style="background-color: red;">  </div>
-          </div>
-          <div class="video-duration">
-            <span class="js-duration"></span>
-          </div>
-        </div>
-        <div class="right-buttons">
-          <div class="player-button fullscreen">
-            <button class="js-fullscreen-button">
-              <i class="fa fa-expand"></i>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

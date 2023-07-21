@@ -45,11 +45,19 @@
     flex-direction: row;
     align-items:  center;
 }
-.vp-progress-bar, .vp-slider {
+.vp-progress-bar {
+    height: 4px;
+    width: 135px;
+    border-radius: 2px;
+    flex-grow: 1;
+}
+
+.vp-slider {
     height: 4px;
     width: 135px;
     border-radius: 2px;
 }
+
 .vp-screen {
     flex-grow: 1;
 }
@@ -68,4 +76,7 @@
 }
 .vp-buttons:hover .circle {
     opacity: 100%;
+}
+.vp-button:hover, .circle:hover {
+    cursor: pointer;
 }

@@ -29,7 +29,7 @@
 .vp-buttons .vp-count-end {
     font-family: 'Roboto';
     color: white;
-    self-align: flex-end;
+    font-size: medium;
 }
 .vp-progress-block {
     margin-left: 2px;
@@ -41,21 +41,22 @@
 }
 .vp-progress-bar {
     margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex-direction: row;
     align-items:  center;
-}
-.vp-progress-bar {
+    background-color: grey;
     height: 4px;
-    width: 135px;
     border-radius: 2px;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .vp-slider {
     height: 4px;
     width: 135px;
     border-radius: 2px;
+    background-color: red;
 }
 
 .vp-screen {
